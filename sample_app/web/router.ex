@@ -21,6 +21,7 @@ defmodule SampleApp.Router do
     get "/help", StaticPagesController, :help
     get "/about", StaticPagesController, :about
     get "/signup", UserController, :new
+    resources "/user", UserController, except: [:new]
   end
 
   # Other scopes may use custom stacks.
