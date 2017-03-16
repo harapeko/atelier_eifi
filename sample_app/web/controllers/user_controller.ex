@@ -6,6 +6,7 @@ defmodule SampleApp.UserController do
   end
 
   def show(conn, %{"id" => id}) do
+    # DBからユーザIDで検索してビューに渡している
     user = Repo.get(SampleApp.User, id)
     render(conn, "show.html", user: user)
   end
