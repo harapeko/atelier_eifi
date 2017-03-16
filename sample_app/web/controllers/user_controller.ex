@@ -2,7 +2,7 @@ defmodule SampleApp.UserController do
   use SampleApp.Web, :controller
 
   def new(conn, _params) do
-    render conn, "new.html"
+    render(conn, "new.html", changeset: SampleApp.User.new)
   end
 
   def show(conn, %{"id" => id}) do
