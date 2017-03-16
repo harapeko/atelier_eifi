@@ -1,4 +1,17 @@
 <div class="jumbotron">
   <h1>Sign up</h1>
   <p>Find me in web/templates/user/new.html.eex</p>
+
+  <%= form_for @changeset, user_path(@conn, :create), fn f -> %>
+    <%= label f, :name, "Name" %>
+    <%= text_input f, :name %>
+  
+    <%= label f, :email, "Email" %>
+    <%= text_input f, :email %>
+  
+    <%= label f, :password, "Password" %>
+    <%= text_input f, :password %>
+  
+    <%= submit "Sign-up!" %>
+  <% end %>
 </div>
