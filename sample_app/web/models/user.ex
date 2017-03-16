@@ -45,4 +45,9 @@ defmodule SampleApp.User do
     change(changeset,
       %{password_digest: SampleApp.Encryption.encrypt(password)})
   end
+
+  # 空のchangesetを取得する
+  def new do
+    %SampleApp.User{} |> cast(:empty, [@required_fields, @optional_fields])
+  end
 end
